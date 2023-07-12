@@ -37,3 +37,5 @@ as accounts for passengers who do not follow the prescribed boarding/disembarkin
 Apply your model to the standard “narrow-body” aircraft shown in Figure 1.
 ...
 ## Full requirements and question description: https://www.immchallenge.org/Contests/2022/2022_IMMC_Problem.pdf
+## image for the "narrow body" aircraft
+<img width="499" alt="image" src="https://github.com/CYX22222003/plane_boarding_timer_core/assets/138369841/ac395fac-5ba6-4209-bf46-cd2efb04e625">
