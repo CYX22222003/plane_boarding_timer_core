@@ -1,4 +1,4 @@
-# What is this respository?
+# The content of this respository
 
 This respository is to stored the 2022 IMMC Singapore materials from ACJC team. It includes the written report and code for simulation. The boarding_plan_core.py is programme that uses a different approach from the one presented in the written report.
 
