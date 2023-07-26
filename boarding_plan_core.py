@@ -2,8 +2,8 @@ import random
 import numpy as np
 import scipy as sci
 
-N = 40#row number
-k = 6#column number
+N = 40  #row number
+k = 6   #column number
 
 #assign position to each passenger #random method
 av_rows = np.arange(0,N,1)
@@ -31,8 +31,8 @@ class passenger(object):
         self.luggage_time = 0
         self.isle_time = 0
         self.seat_shuffle_time = 1
-        self.shuffle_multiplier = 2
-        #luggage ammount
+        self.shuffle_multiplier = 2 #shuffle multiplier can be changed based on passengers' positions
+        #luggage ammount #the luggage amount can be included later which may affect the total time of each passenger
         #self.luggage = ....
 
 #position list
@@ -70,7 +70,7 @@ time_lst = []
 breakpt = False
 while check_lst(position_lst):
     for i in range(len(position_lst)):
-        if isinstance(position_lst[i],passenger):
+        if isinstance(position_lst[i],passenger): #the actual value of the addition to passenger isle time can be varied
             position_lst[i].isle_time += 1
             #case 1: move forward
             if position_lst[i].current_pos != position_lst[i].target_pos  and position_lst[i-1] == None:
@@ -86,7 +86,7 @@ while check_lst(position_lst):
                     if check_col( column_status[position_lst[i].current_pos][position_lst[i].column_dir],position_lst[i].column_pos):
                         position_lst[i].seat_shuffle_time *= position_lst[i].shuffle_multiplier
 
-                #case 2.2: account for luggage stowing time
+                #case 2.2: account for luggage stowing time (the addition of luggage time can also be varied)
                 position_lst[i].luggage_time += 1
                 if position_lst[i].luggage_time > 3: #can be related to the number of carry-ons 
                     time_lst.append(position_lst[i].isle_time+position_lst[i].luggage_time+position_lst[i].seat_shuffle_time)
